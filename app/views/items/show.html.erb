@@ -1,4 +1,17 @@
 <h1> <%=@department.name%>:<%= @item.name %> - $<%= @item.price %></h1>
 <p><%= @item.description %></p>
+<h2>Comments</h2>
+
+<% @item.comments.each do |comment|%>
+    <% @sum = 0%>
+    <% @sum += comment.rating%>
+    <%= render 'comments/comment', { comment: comment } %>
+<% end %>
+<% @average = @sum / Comment.count %>
+<p>Average rating: <%@average%></p>
+
+<%= link_to 'Add Comment', new_item_comment_path(@item) %>
 <%= link_to 'Edit item', edit_department_item_path([@department, @item]) %>
 <%= link_to 'Remove item', [@department, @item], method: :delete %>
+
+
