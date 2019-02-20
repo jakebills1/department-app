@@ -1,4 +1,5 @@
 class DepartmentsController < ApplicationController
+  
   before_action :set_dep, only: [:show, :update, :edit, :destroy]
 
   def index

@@ -1,2 +1,4 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1> <%=@department.name%>:<%= @item.name %> - $<%= @item.price %></h1>
+<p><%= @item.description %></p>
+<%= link_to 'Edit item', edit_department_item_path([@department, @item]) %>
+<%= link_to 'Remove item', [@department, @item], method: :delete %>

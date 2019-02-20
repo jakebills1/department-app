@@ -1,2 +1,4 @@
 <h1> <%=@department.name%> </h1>
-<p>Find me in app/views/departments/show.html.erb</p>
+<%= link_to 'View items', department_items_path(@department) %>
+<%= link_to 'Back to Index', departments_path %>
+
