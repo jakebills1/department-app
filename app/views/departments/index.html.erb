@@ -1,0 +1,8 @@
+<h1>Welcome to the Department Store </h1>
+<% @departments.each do |dep|%>
+    <%= dep.name%>
+    <%= link_to 'Enter Department', department_path(dep) %>
+    <%= link_to 'Edit Department', edit_department_path(dep) %>
+    <%= link_to 'Remove Department', department_path(dep), method: :delete %>
+<%end%>
+<%= link_to 'Add a department', new_department_path %>
